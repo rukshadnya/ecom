@@ -7,6 +7,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -20,6 +22,11 @@ public class Cart {
     private Long CartId;
 	private Long ProductId;
 	private Integer quantity;
+	
+	@ManyToOne
+	@JoinColumn(name = "product_id")
+	private Product product;
+	
     private List<Product> products = new ArrayList<>();
 	
     public Cart() {

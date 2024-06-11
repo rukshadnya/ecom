@@ -6,4 +6,6 @@ import com.ecom.entities.Cart;
 
 public interface CartRepository extends JpaRepository<Cart, Long> {
 
+	Cart findCartByProductId(Long productId);
+
 }

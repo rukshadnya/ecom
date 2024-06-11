@@ -40,8 +40,13 @@ public class CartService {
          return cartRepository.findAll();
 	}
 	 
-	 public Cart getProductFromCart(Long cartid) {
-	        return cartRepository.findById(cartid).orElseThrow();
-	    
-	    }
+		 
+	 public void deleteProductFromCart(Long productId) {
+	        Cart cart = cartRepository.findCartByProductId(productId);
+	        if (cart != null) {
+	            cartRepository.delete(cart);
+
+	        }
+	 }
+	 
 }

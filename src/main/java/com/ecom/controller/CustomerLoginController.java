@@ -16,13 +16,13 @@ public class CustomerLoginController {
 	@Autowired
 	private CustomerLoginService customerLoginService;
 	
-	@PostMapping("/signup")  // api for signup of new user
+	@PostMapping("/signup")  
 	public ResponseEntity<Customer> signup(@RequestBody Customer customer){
 		Customer registeredCustomer = customerLoginService.registerCustomer(customer);
 		return new ResponseEntity<Customer>(registeredCustomer,HttpStatus.CREATED);
 	}
 
-	 @PostMapping("/login")    // api for login of user
+	 @PostMapping("/login")    
 	 public ResponseEntity<Customer> login(@RequestBody Customer customer){
 		 Customer loggedCustomer = customerLoginService
 				 .loginCustomer(customer.getUsername(),customer.getPassword());
