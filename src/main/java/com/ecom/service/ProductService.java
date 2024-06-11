@@ -8,10 +8,6 @@ public interface ProductService {
 	
 	List<Product> getAllProducts();
 
-	static Product getProductById(Long productId) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
+	Product getProductById(Long productId) ;
 
 }

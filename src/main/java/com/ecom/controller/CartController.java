@@ -29,13 +29,14 @@ public class CartController {
         cartService.addProductToCart( productId, quantity);
         return ResponseEntity.ok("Product added to cart successfully");
         
-        
     }
  
  @GetMapping("/cart")
  public ResponseEntity<List<Cart>> getAllProductsInCart() {
      List<Cart> carts = cartService.getAllProductsInCart();
      return ResponseEntity.ok(carts);
+     
+    
  }
  
  @DeleteMapping("/{productId}")
