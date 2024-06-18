@@ -3,17 +3,23 @@ package com.ecom.entities;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.OneToOne;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+
 
 
 
 @Entity
-
+@Table(name = "cart")
 public class Cart {
 
 	@Id
@@ -22,15 +28,18 @@ public class Cart {
 	private Long ProductId;
 	private Integer quantity;
 	
-	@ManyToOne
-	@JoinColumn(name = "product_id")
-	private Product product;
-	
-    private List<Product> products = new ArrayList<>();
+	/*
+	 * @OneToOne
+	 * 
+	 * @JoinColumn(name = "productid")
+	 * 
+	 * @Autowired private Product product;
+	 */
+	private List<Product> products = new ArrayList<>();
 	
     public Cart() {
 		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	public Cart(Long cartId, Long productId, Integer quantity, List<Product> products) {

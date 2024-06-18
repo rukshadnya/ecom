@@ -8,7 +8,6 @@ import jakarta.persistence.Table;
 
 
 @Entity
-
 @Table(name = "Customer_Details")
 public class Customer {
 	

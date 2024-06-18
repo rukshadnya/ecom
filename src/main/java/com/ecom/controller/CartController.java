@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ecom.entities.Cart;
-import com.ecom.service.CartService;
+import com.ecom.service.CartServiceImpl;
 
 @RestController
 @RequestMapping
@@ -21,7 +21,7 @@ import com.ecom.service.CartService;
 public class CartController {
 
 	@Autowired
-    private CartService cartService;
+    private CartServiceImpl cartService;
 
 
  @PostMapping("/addProduct/{productId}/{quantity}")
